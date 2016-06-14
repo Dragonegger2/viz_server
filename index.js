@@ -19,11 +19,8 @@ app.get('/', function (req, res) {
 
 //Should only have images being uploaded.
 app.post('/', upload.array('photos', 12), function(req, res){
-    console.log(req.body); // form fields
-    console.log(req.file);// form files
+    console.log(req.files);// form files
     res.status(204).end();
-}, function() {
-
 });
 
 app.listen(3000, function () {
